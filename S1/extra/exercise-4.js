@@ -6,8 +6,7 @@ let totalSails = 0;
 
 
 for(let i = 0; i<products.length; i++){
-    let products2 = products[i];
-    totalSails += products2.sellCount;
+    totalSails += products[i].sellCount;
 }
 
 console.log(totalSails)

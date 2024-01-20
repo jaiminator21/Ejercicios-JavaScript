@@ -6,11 +6,10 @@ const products = [{name: 'Gorra de rodilla', sellCount: 10},{name: 'Pantalón de
 
 
 for(let i = 0; i<products.length; i++){
-    let products2 = products[i];
-    if(products2.sellCount <=20){
-        badProducts.push(products2.name)
+    if(products[i].sellCount <=20){
+        badProducts.push(products[i].name)
     }else{
-        goodProducts.push(products2.name)
+        goodProducts.push(products[i].name)
     }
 }
 

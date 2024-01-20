@@ -10,10 +10,9 @@ let moviesLong = [];
 
 
 for(let i = 0; i<movies.length; i++){
-    let movies2 = movies[i];
-    if(movies2.durationInMinutes<=99){
+    if(movies[i].durationInMinutes<=99){
         moviesShort.push(movies2.name);
-    }else if(movies2.durationInMinutes>= 201){
+    }else if(movies[i].durationInMinutes>= 201){
         moviesLong.push(movies2.name);
     }else{
         moviesMedium.push(movies2.name)
