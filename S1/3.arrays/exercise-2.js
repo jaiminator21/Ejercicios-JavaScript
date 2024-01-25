@@ -8,3 +8,7 @@ cars.shift(0);
 cars.unshift("Ford");
 
 console.log(cars)
+
+
+
+// cars[0] = "Ford"    Con esto es suficiente

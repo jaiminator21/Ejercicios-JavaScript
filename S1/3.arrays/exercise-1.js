@@ -5,13 +5,9 @@ const cars = ["Saab", "Volvo", "BMW"];
 
 
 for(let i = 0; i<cars.length; i++){
-    console.log(i);
     if(i == 1){
-        console.log(i);
+        console.log(i, cars[i]);
     }
-
-
 }
 
 
-console.log(cars[1]);

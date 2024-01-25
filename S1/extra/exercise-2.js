@@ -4,7 +4,7 @@ let foodSchedule = [{ name: "Salad", isVegan: true }, { name: "Salmon", isVegan:
 
 for (let i = 0; i < foodSchedule.length; i++) {
     if (foodSchedule[i].isVegan != true) {
-        foodSchedule[i].name = fruits[i-1];
+        foodSchedule[i].name = fruits[i];
     }
 }
 console.log(foodSchedule)
