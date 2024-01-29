@@ -14,6 +14,6 @@ printHere.appendChild(createList);
 for(let i of cars){
     const createListContent = document.createElement('li');
     createList.appendChild(createListContent);
-    createListContent.textContent = i;
+    createListContent.innerText = i;
    
 }
