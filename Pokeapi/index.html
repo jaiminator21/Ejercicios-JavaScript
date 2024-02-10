@@ -14,30 +14,131 @@
 </head>
 
 <body>
+
     <div class="container">
         <h1>Pokedex</h1>
-        <div class="container">
+        <div class="container-filters">
+            <form action="" class="filter">
+                <label for="order">Ordenar por tipos</label>
+                <select id="order">
+                    <option value="">All</option>
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="electric">Electric</option>
+                    <option value="grass">Grass</option>
+                    <option value="ice">Ice</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="poison">Poison</option>
+                    <option value="ground">Ground</option>
+                    <option value="flying">Flying</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="bug">Bug</option>
+                    <option value="rock">Rock</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="dark">Dark</option>
+                    <option value="steel">Steel</option>
+                    <option value="fairy">Fairy</option>
+                    <option value="stellar">Stellar</option>
+
+                </select>
+            </form>
             <div class="container-searchbar">
-                <input type="text" placeholder="Pika pi..." >
+                <input type="text" placeholder="Pika pi...">
                 <div class="search"></div>
-              </div>
+            </div>
+            <form action="" class="filter">
+                <label for="reorder">Ordenar</label>
+                <select id="reorder">
+                    <option value="amas">IDs ascendientes</option>
+                    <option value="amenos">IDs descendientes</option>
+                    <option value="az">De la a -> z</option>
+                    <option value="za">De la z -> a</option>
+                </select>
+            </form>
         </div>
-        <ol id="pokedex">
-            <div class ="card">
-                <div class = "card-upper">
+        <div id="pokedex">
+            <div class="card">
+                <div class="card-upper">
                     <p class="card-id"></p>
                 </div>
-                <div class = "card-lower">
+                <div class="card-lower">
                     <h2 class="card-title"></h2>
                     <img src="" alt="" class="card-image">
                     <p class="card-subtitle"></p>
                 </div>
             </div>
-        </ol>
+        </div>
     </div>
+
+
+    <div class="container-full">
+      <div class="container-carta">
+        <div class="card">
+            <div class="card-upper">
+                <p class="card-id"></p>
+            </div>
+            <div class="card-lower">
+                <h2 class="card-title">PlaceHolder</h2>
+                <img src="" alt="" class="card-image">
+                <p class="card-subtitle">PlaceHolder</p>
+            </div>
+        </div>
+        
+        <div class="container-stats">
+            <div class = "poke-stats">
+                <span>Defensa:</span>
+                <span>XX</span>
+            </div>
+            <div class = "poke-stats">
+                <span>Ataque:</span>
+                <span>XX</span>
+            </div>
+            <div class = "poke-stats">
+                <span>Super defensa:</span>
+                <span>XX</span>
+            </div>
+
+            <div class = "poke-stats">
+                <span>Super ataque:</span>
+                <span>XX</span>
+            </div>
+
+            <div class = "poke-stats">
+                <span>Velocidad:</span>
+                <span>XX</span>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+      <div class="container-button"></div>
+      <div class="container-carta">
+
+        <form action="" class="filter">
+            <label for="select-poke">Seleciona un adversario</label>
+            <select id="select-poke">
+                <option value="amas">IDs ascendientes</option>
+                <option value="amenos">IDs descendientes</option>
+                <option value="az">De la a -> z</option>
+                <option value="za">De la z -> a</option>
+            </select>
+        </form>
+
+      </div>
+    </div>
+
+
+
+
+
+
     <script>
         AOS.init();
-      </script>
+    </script>
 </body>
 
 </html>
