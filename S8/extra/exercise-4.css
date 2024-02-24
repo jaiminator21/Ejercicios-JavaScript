@@ -1,0 +1,45 @@
+.planets{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.planets img{
+    height: 250px;
+    width: 250px;
+}
+
+.input{
+ margin-top: 20px;
+}
+
+.characters{
+    display: flex;    
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.character{
+    display: flex;    
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+
+.red{
+    background-color: red;
+}
+
+.characters img{
+    height: 250px;
+    width: 125;
+}
