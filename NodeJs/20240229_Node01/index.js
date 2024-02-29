@@ -49,7 +49,7 @@ app.get('/', (request, response) => {
         app: 'My App'
     });
 });
-º
+
 /* MANEJO DE ERRORES */
 
 app.use((request, response, next) => {
