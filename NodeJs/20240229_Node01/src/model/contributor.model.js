@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const trackSchema = new mongoose.Schema({
-    isrc: {
-        type: String,
+const contributorSchema = new mongoose.Schema({
+    id: {
+        type: Number,
         required: true,
         trim: true,
         unique: true
@@ -12,27 +12,29 @@ const trackSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    contributors: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Contributor'
-    },
-    genre: {
+    role: {
         type: String,
         required: true,
         trim: true
     },
-    lineCYear: {
-        type: Number,
+    country: {
+        type: String,
         required: true,
         trim: true
     },
-    lineCPublisher: {
+    //1970-01-01 - año-mes-dia
+    birthday: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    genre: {
         type: String,
         required: true,
         trim: true
     }
 });
 
-const Track = mongoose.model('Track', trackSchema);
+const Contributor = mongoose.model('Contributor', contributorSchema);
 
-module.exports = Track;
+module.exports = Contributor;

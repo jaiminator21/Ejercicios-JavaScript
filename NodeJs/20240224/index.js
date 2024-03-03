@@ -1,7 +1,14 @@
 // IMPORTAR MODULOS Y VARIABLES
 const express = require("express");
+const { alumnos } = require("./alumnos");
  
-const PORT = 3001;
+for (let alumno of alumnos) {
+  if (alumno.id == 2) {
+    console.log(alumno.asignaturas);
+  }
+}
+ 
+const PORT = 3000;
  
 // CONFIGURACIÓN DE LA APP
 const app = express();
@@ -13,45 +20,62 @@ app.get("/", (request, response) => {
   response.send("esta es mi primera app en node");
 });
  
-//localhost:<PORT>/persona
-app.get("/persona", (request, response) => {
-  response.json({
-    nombre: "Juan",
-    apellidos: "González Sánchez",
-  });
+// ver todos los alumnos
+app.get("/alumnos", (req, res) => {
+  res.json(alumnos);
 });
  
-app.get("/params", (request, response) => {
-  const params = request.query;
-  response.send(params);
-});
- 
-app.get("/ciudad", (req, res) => {
-  const name = req.query.name; // La variable que se pone al pedirle una peticion a la url http://localhost:3001/ciudad  seguido de ?name=barcelona ? la interogación se pone cuando vas a 
-  // hacer una pasarle un parametro seguido del nombre de la variable creado anteriormente. En este caso es name y despues se le iguala a un valor. En este caso barcelona
-  // Esta variable es name porque se declara al igualar name de la siguente forma req.query."name"
-  ciudades = {
-    madrid: "6000000",
-    barcelona: "3000000",
-    sevilla: "700000",
-    avila: "60000",
-  };
- 
-  //nos han pasado un nombre?
-  if (!name) {
-    res.send("falta el nombre");
+// ver un alumno por id
+app.get("/alumno", (req, res) => {
+  if (req.query.id) {
+    for (let alumno of alumnos) {
+      if (alumno.id == req.query.id) {
+        res.json(alumno);
+      }
+    }
   }
-  // el nombre que nos han pasado está en la "base de datos"?
-  if (!ciudades.hasOwnProperty(name)) { //Comprueba si name tiene una propiedad que tenga ciudades
-    res.send("la ciudad no está en la lista");
-  }
- 
-  res.send(`La poblacion de ${name} es ${ciudades[name]}`);
+  res.send("no existe ese alumno");
 });
-
-
-
-
+//
+// ver todos los examenes de una asignatura de un alumno
+ 
+app.get("/alumno/asignaturas", (req, res) => {
+  if (req.query.id) {
+    for (let alumno of alumnos) {
+      if (alumno.id == req.query.id) {
+        res.json(alumno.asignaturas);
+      }
+    }
+  }
+  res.send("no existe ese alumno");
+});
+ 
+// ver los examenes de una asignatura de un alumno
+app.get("/alumno/asignatura", (req, res) => {
+  const { id, asignatura } = req.query;
+ 
+  if (id && asignatura) {
+    for (let alumno of alumnos) {
+      if (alumno.id == id) {
+        res.json(alumno.asignaturas[asignatura]);
+      }
+    }
+  }
+  res.send("no existe ese alumno o la asignatura");
+});
+ 
+app.get("/alumno/asignatura/trimestre", (req, res) => {
+  const { id, asignatura, trimestre } = req.query;
+ 
+  if (id && asignatura && trimestre) {
+    for (let alumno of alumnos) {
+      if (alumno.id == id) {
+        res.json(alumno.asignaturas[asignatura][trimestre]);
+      }
+    }
+  }
+  res.send("no existe ese alumno o la asignatura");
+});
  
 // MANEJO ERRORES
  
@@ -59,4 +83,3 @@ app.get("/ciudad", (req, res) => {
 app.listen(PORT, () => {
   console.log(`La aplicación se ha inicializado en el puerto: ${PORT}`);
 });
- 

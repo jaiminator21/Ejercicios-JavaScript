@@ -1,26 +1,21 @@
 // librerías importadas
 const express = require('express');
 const cors = require('cors');
-//LLAMAMOS A TRACKROUTERS  
-const trackRouter = require('./src/routes/track.routes')
-
-
 // componentes "míos" que voy a utilizar
 const HTTPSTATUSCODE = require('./utils/httpStatusCode');
 const { connectMongo } = require('./utils/db');
-const PORT = 3000;
-// imports de routes
+const trackRouter = require('./src/routes/track.routes');
+const userRouter = require('./src/routes/user.routes');
 
-//
+// AQUI EL ROUTER DE CONTRIBUTOR
+
+const PORT = 3000;
 
 
 // CONFIGURACION
 connectMongo();
 const app = express();
 
-
-
-//app.use(mongoSanitize());
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET,PATCH,POST,DELETE');
     res.header('Access-Control-Allow-Credentials', true);
@@ -34,13 +29,13 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.set("secretKey", 'N7dgy5274lAYj0CeDSDqjJ0shijoYQPR');
 
 
 /* ROUTES */
-
 app.use('/track', trackRouter);
-
+//app.use('/contributor', contributorRouter);
+app.use('/user', userRouter);
 
 // ruta de bienvenida
 app.get('/', (request, response) => {
