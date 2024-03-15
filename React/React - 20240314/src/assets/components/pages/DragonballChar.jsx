@@ -25,11 +25,11 @@ function DragonballChar(props) {
 
 
   return (
-    <div>
-    {items.map((item) => (
-      <DBZCard data={item}/>
-    ))}
-  </div>
+    <div className='container-row'>
+      {items.map((item) => (
+        <DBZCard data={item}/>
+      ))}
+    </div>
   )
 }
 

@@ -23,7 +23,7 @@ function App() {
     <Header />
     <Router>
       <Routes>
-       {/*  <Route path='home' Component={Home}></Route>*/}
+        <Route path='home' Component={Home}></Route>*
         <Route path='dragonball' Component={DragonballChar}></Route> 
       </Routes>
     </Router>

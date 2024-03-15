@@ -45,7 +45,6 @@
 header{
   display: flex;
   flex-direction: row;
-  
 }
 .container-img{
   width: 20%;
@@ -75,8 +74,74 @@ header{
   align-items: center;
 }
 
+.container-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 
+.container-card-main{
+  margin: 20px 20px;
+  width:  325px;
+  height: 650px;
+}
 
 .card-upper{
-  background-image: url('../public/image-2.jpg');
+  width: 100%;
+  height: 50%;
+  background-image: url('../public/image-4.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;   
+  border: solid white 2px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
+
+.magolo{
+  width: 90%;
+  height: 130%;
+}
+
+.card-img{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;    
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+.magolo:hover{
+  transform: scale(1.3);
+}
+
+
+.container-card-main:hover .card-img{
+  transform: scale(1.3);
+}
+
+.card-lower{
+  height: 50%;
+  width: 100%;
+  border: solid white 2px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card-info h2 {
+  color: orange;
+}
+
+
+
+.card-info p{
+  color: orange;
+}
+
+

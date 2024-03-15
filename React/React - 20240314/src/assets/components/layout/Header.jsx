@@ -7,8 +7,8 @@ function Header() {
         <div className='container-menu'>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Characters</a></li>
+                    <li><a href="http://localhost:5173/home">Home</a></li>
+                    <li><a href="http://localhost:5173/dragonball">Characters</a></li>
                 </ul>
             </nav>
         </div>
