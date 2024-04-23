@@ -1,0 +1,24 @@
+<h2 style="text-align: center;">Seccion de templates, donde vemos como aplicar estilos en base a condiciones</h2>
+
+<div class="container">
+  <!-- Descomenta cada bloque para visualizarlo y comenta los otros -->
+  <!-- El ngStyle asigna un objeto de atributos en lugar de la clase, esto puede servir
+  para datos que vienen de una request o simplemente para quien quiera tener limpio su hoja de estilos
+  y organizarse mediante objetos en la parte de TS -->
+
+  <!-- <div [ngStyle]="modoNoche ? styles : {}" class="block">
+    <button (click)="handleModoNoche()">Modo noche</button>
+  </div> -->
+
+ <!-- El ngClass tiene una logica diferente donde se asignara un objeto en el que la 'key' es la clase
+y el value es el booleano que lo activara  -->
+   <!-- <div [ngClass]="{'darkMode': modoNoche}" class="block">
+    <button (click)="handleModoNoche()">Modo noche</button>
+  </div>  -->
+
+  <!-- utilizamos el objeto class que se activara en base a la condicion -->
+  <div [class.darkMode]="modoNoche" class="block">
+    <button (click)="handleModoNoche()">Modo noche</button>
+  </div>
+</div>
+

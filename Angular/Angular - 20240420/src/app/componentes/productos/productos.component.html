@@ -1,0 +1,13 @@
+<div   class="container">
+  <ng-container *ngFor="let producto of productosQueRecibeElHijo; index as i" >
+    <div class="card" >
+      <img [src]="producto.imagen" alt="{{producto.nombre}}">
+      <div class="card-body">
+        <h2>{{i + 1}} - {{producto.nombre}}</h2>
+        <h3>Precio: {{producto.precio}}€</h3>
+      </div>
+
+      <button (click)="addProduct(producto)">Añadir producto</button>
+    </div>
+  </ng-container>
+</div>

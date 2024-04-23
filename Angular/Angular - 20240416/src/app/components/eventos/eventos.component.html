@@ -1,0 +1,40 @@
+
+<h1 style="text-align: center;">Este bloque tiene los eventos mas comunes, y se integra con las directivas de control</h1>
+<div class="container">
+<!-- Evento Click -->
+<div class="block">
+<h2>Haz click aqui y saldra un mensaje</h2>
+<button (click)="mostrarMensaje()">Click aqui</button>
+</div>
+
+<!-- Evento Input -->
+<div class="block">
+  <h2>El evento input se lanza cada vez que entras un caracter, chequea esta variable que se pintara aqui -- > <span style="color: red">{{nombreEventoInput}}</span></h2>
+  <input (input)="ingresarNombreEventoInput($event)" />
+</div>
+
+<!-- Evento Change -->
+<div class="block">
+  <h2>El evento Change se lanza cuando terminas de escribir la frase y haces click fuera del elemento.
+     Chequea esta variable que se pintara aqui -- > <span style="color: red">{{nombreEventoChange}}</span></h2>
+  <input (change)="ingresarNombreEventoChange($event)" />
+</div>
+
+<!--Evento focus -->
+<div class="block">
+<!-- Aqui vemos un ejemplo muy util de como manejar un buscador -->
+<!-- Esto tiene dos eventos que utilizan el mismo metodo para cambiar la condicion
+el evento focus se dispara cuando hacemos click en el elemento input,
+el evento blur se dispara cuando hacemos click fuera del elemento.
+Utilizamos el ngif para mostrar el elemento cuando se cumpla la condicion establecida -->
+  <h2>Haz tu busqueda</h2>
+  <input  (focus)="handleFocus()" (blur)="handleFocus()" />
+  <div  *ngIf="mostrarUltimasBusquedas">
+    <h3>Ultimas busquedas</h3>
+    <ul>
+      <li *ngFor="let busqueda of ultimasBusquedas">{{busqueda}}</li>
+  </ul>
+  </div>
+</div>
+</div>
+

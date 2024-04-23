@@ -1,0 +1,27 @@
+<h2 style="text-align: center;">Seccion de directivas de control: Bucle for y condicional If</h2>
+
+<div class="container">
+  <div class="block" >
+    <div *ngFor="let jugador of jugadores">
+        <h2>{{jugador}}</h2>
+    </div>
+    <button (click)="eliminarJugador()">Eliminar jugador</button>
+  </div>
+
+  <div class="block">
+    <div *ngIf="mostrarElemento; else elementoOculto ">
+      El elemento se muestra
+    </div>
+
+    <button (click)="handleMostrarElemento()">Ocultar o mostrar</button>
+  </div>
+
+
+  <ng-template #elementoOculto>
+  <div>
+    El elemento esta oculto
+  </div>
+  </ng-template>
+
+</div>
+
