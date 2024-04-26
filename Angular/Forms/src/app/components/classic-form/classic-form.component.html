@@ -1,0 +1,27 @@
+<div class="container-form">
+    <h1>Register Form</h1>
+    <form (submit)="handelRegisterForm($event)">
+        
+            <div class="input-form">
+                <label for="name">Name</label>
+                <input required  [(ngModel)]="registerForm.name" type="text" name="name" id="name" placeholder="Insert your name" >
+            </div>
+            <div class="input-form">
+                <label for="surname">Surname</label>
+                <input required [(ngModel)]="registerForm.surname" type="text" name="surname" id="surname" placeholder="Insert your surname" >
+            </div>
+            <div class="input-form">
+                <label for="email">Email</label>
+                <input required [(ngModel)]="registerForm.email" type="email" name="email" id="email" placeholder="Insert your email" >
+            </div>
+            <div class="input-form">
+                <label for="password">Password</label>
+                <input required [(ngModel)]="registerForm.password" type="password" name="password" id="password" placeholder="Insert your password" >
+            </div>
+            <div class="input-form">
+                <label for="cpassword">Confirm password</label>
+                <input required [(ngModel)]="registerForm.cpassword" type="password" name="cpassword" id="cpassword" placeholder="Insert your password" >
+            </div>
+        <button type="submit">Register</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+body {
+    font-family: "Muli-Regular";
+    color: #666;
+    font-size: 13px;
+    margin: 0;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: "Muli-Regular";
+    color: #333;
+    font-size: 13px;
+}
